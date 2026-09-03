@@ -64,3 +64,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Tugas
+
+Nama aplikasi : app-perpustakaan
+Tujuan : Aplikasi ini bertujuan untuk membantu pengelolaan data perpustakaan, seperti data buku, anggota, serta proses peminjaman dan pengembalian buku agar dapat dilakukan dengan lebih mudah dan terorganisir.
+Cara menjalankan project secara lokal : git clone [link] -> masuk ke folder project -> cmd -> php artisan serve
+
+Model : Mengatur/mengolah data atau aturan 
+View : Apa yang dilihat oleh user
+Controller : Mengatur request yang masuk
