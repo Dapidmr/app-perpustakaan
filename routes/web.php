@@ -18,6 +18,9 @@ Route::put('/loans/{id}/kembalikan', [LoanController::class, 'kembalikan'])
     ->name('loans.kembalikan');
 Route::prefix('admin')->group(function () {
 
+    Route::get('/', function(){
+        return "Halaman admin";
+    });
     Route::get('/info', function(){
         return 'Info Admin';
     });
