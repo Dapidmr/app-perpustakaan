@@ -3,6 +3,7 @@
 @section('title', 'Daftar Kategori')
 
 @section('content')
+
     <h1>Daftar Kategori</h1>
 
     <p><a href="{{ route('categories.create') }}" class="btn">+ Tambah Kategori</a></p>
