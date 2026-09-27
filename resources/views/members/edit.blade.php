@@ -1,48 +1,49 @@
 {{-- File: resources/views/books/create.blade.php --}}
 @extends('layouts.app')
 
-@section('title', 'Tambah Anggota')
+@section('title', 'Edit Anggota')
 
 @section('content')
 
-    <h1>Tambah Anggota</h1>
+    <h1>Edit Anggota</h1>
     <p><a href="{{ route('members.index') }}">&larr; Kembali ke daftar anggota</a></p>
 
-    <form action="{{ route('members.store') }}" method="POST">
+    <form action="{{ route('members.update', $member['id']) }}" method="POST">
         @csrf
+        @method('PUT')
 
         <label for="judul">Nama</label>
-        <input type="text" name="nama" id="nama" value="{{ old('nama') }}">
+        <input type="text" name="nama" id="nama" value="{{ old('nama', $member['nama']) }}">
         @error('nama')
             <div class="error">{{ $message }}</div>
         @enderror
 
         <label for="penulis">Nim</label>
-        <input type="text" name="nim" id="nim" value="{{ old('nim') }}">
+        <input type="text" name="nim" id="nim" value="{{ old('nim', $member['nim']) }}">
         @error('nim')
             <div class="error">{{ $message }}</div>
         @enderror
 
         <label for="penerbit">Email</label>
-        <input type="email" name="email" id="email" value="{{ old('email') }}">
+        <input type="email" name="email" id="email" value="{{ old('email', $member['email']) }}">
         @error('email')
             <div class="error">{{ $message }}</div>
         @enderror
 
         <label for="tahun_terbit">No. Telepon</label>
-        <input type="text" name="nomor_telepon" id="nomor_telepon" value="{{ old('nomor_telepon') }}">
+        <input type="text" name="nomor_telepon" id="nomor_telepon" value="{{ old('nomor_telepon', $member['nomor_telepon']) }}">
         @error('nomor_telepon')
             <div class="error">{{ $message }}</div>
         @enderror
 
         <label for="isbn">Alamat</label>
-        <input type="text" name="alamat" id="alamat" value="{{ old('alamat') }}">
+        <input type="text" name="alamat" id="alamat" value="{{ old('alamat', $member['alamat']) }}">
         @error('alamat')
             <div class="error">{{ $message }}</div>
         @enderror
 
         <label for="stok">Status</label>
-        <input type="text" name="status" id="status" value="{{ old('status') }}">
+        <input type="text" name="status" id="status" value="{{ old('status', $member['status']) }}">
         @error('status')
             <div class="error">{{ $message }}</div>
         @enderror

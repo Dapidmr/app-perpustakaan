@@ -24,11 +24,11 @@ class StoreMemberRequest extends FormRequest
     {
         return [
             'nama' => 'required|string|max:200',
-            'nim' => 'required|string|max:20',
-            'email' => 'required|email|max:100',
+            'nim' => 'required|string|max:20|unique:members,nim',
+            'email' => 'required|email|unique:members,email|max:100',
             'nomor_telepon' => 'required|string|max:20',
             'alamat' => 'required|string',
-            'status' => 'required|string',
+            'status' => 'required|string|in:aktif,nonaktif',
         ];
     }
     public function messages(): array
@@ -40,10 +40,12 @@ class StoreMemberRequest extends FormRequest
 
         'nim.required' => 'NIM wajib diisi.',
         'nim.string' => 'NIM harus berupa teks.',
+        'nim.unique' => 'NIM sudah terdaftar. Silahkan gunakan NIM lain.',
         'nim.max' => 'NIM maksimal 20 karakter.',
 
         'email.required' => 'Email wajib diisi.',
         'email.email' => 'Format email tidak valid.',
+        'email.unique' => 'Email sudah terdaftar. Silahkan gunakan email lain',
         'email.max' => 'Email maksimal 100 karakter.',
 
         'nomor_telepon.required' => 'Nomor telepon wajib diisi.',
@@ -56,6 +58,7 @@ class StoreMemberRequest extends FormRequest
 
         'status.required' => 'Status anggota wajib diisi.',
         'status.string' => 'Status harus berupa teks.',
+        'status.in' => 'Status hanya boleh Aktif dan Nonaktif',
     ];
 }
 }
