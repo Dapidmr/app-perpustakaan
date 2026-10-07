@@ -41,8 +41,11 @@
             <div class="error">{{ $message }}</div>
         @enderror
 
-        <label for="stok">Status</label>
-        <input type="text" name="status" id="status" value="{{ old('status') }}">
+        <label for="status">Status</label>
+        <select name="status" id="status">
+            <option value="aktif" {{ old('status') == 'aktif' ? 'selected' : '' }}>Aktif</option>
+            <option value="nonaktif" {{ old('status') == 'nonaktif' ? 'selected' : '' }}>Nonaktif</option>
+        </select>
         @error('status')
             <div class="error">{{ $message }}</div>
         @enderror
