@@ -4,8 +4,6 @@
 
 @section('title', 'Daftar Kategori')
 
-<a href="{{ route('categories.index') }}"><- Kembali ke daftar</a>
-
 @section('content')
 
     <h1>Tambah Kategori</h1>
