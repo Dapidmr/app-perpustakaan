@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -40,4 +41,9 @@ Route::middleware(['auth'])->group(function() {
         });
         
     });
+    Route::get('/profil', [ProfileController::class, 'show'])
+        ->middleware('auth')
+        ->name('profil');
+    Route::get('/profil', [ProfileController::class, 'show'])->name('profil');
+    Route::post('/profil/password', [ProfileController::class, 'updatePassword'])->name('profil.password');
 });
