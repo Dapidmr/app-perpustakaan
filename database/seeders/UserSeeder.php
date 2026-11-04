@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         User::updateorCreate(
             ['email' => 'admin@pens.ac.id'],
             [
-                'name' => 'Admin Perpustakaan',
+                'name' => 'Bambang Sutrisno',
                 'password'=> Hash::make('password'),
                 'role' => 'admin'
             ]
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
         User::updateOrCreate(
             ['email' => 'petugas1@pens.ac.id'],
             [
-                'name' => 'Petugas Satu',
+                'name' => 'Siti Rahmawati',
                 'password' => Hash::make('password'),
                 'role' => 'petugas',
             ]
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
         User::updateOrCreate(
             ['email' => 'petugas2@pens.ac.id'],
             [
-                'name' => 'Petugas Dua',
+                'name' => 'Ahmad Fauzi',
                 'password' => Hash::make('password'),
                 'role' => 'petugas',
             ]
